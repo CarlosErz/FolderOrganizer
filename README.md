@@ -18,8 +18,10 @@ Folder Organizer es una aplicación con interfaz gráfica diseñada para facilit
 
 ## Capturas de pantalla
 
-![Captura de pantalla 1](ruta/de/captura1.png) <!-- Agrega capturas de pantalla de tu interfaz gráfica -->
-![Captura de pantalla 2](ruta/de/captura2.png)
+[![c1.png](https://i.postimg.cc/W3LVV3xZ/c1.png)](https://postimg.cc/2qwMFzkj)
+[![c2.png](https://i.postimg.cc/44PDLB4V/c2.png)](https://postimg.cc/14g740q3)
+
+
 <!-- Puedes agregar más capturas de pantalla según sea necesario -->
 
 ## Cómo instalar
