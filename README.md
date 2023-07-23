@@ -14,7 +14,7 @@ Folder Organizer es una aplicación con interfaz gráfica diseñada para facilit
 
 - **Opciones de filtrado:** La aplicación ofrece opciones de filtrado para excluir ciertas extensiones o tipos de archivos de la organización, si así lo prefieres.
 
-- **Vista previa y confirmación:** Antes de llevar a cabo cualquier cambio, Folder Organizer proporciona una vista previa de cómo quedarán las carpetas organizadas. Una vez revisada y confirmada, la aplicación procederá con la organización.
+
 
 ## Capturas de pantalla
 
