@@ -27,9 +27,13 @@ Folder Organizer es una aplicación con interfaz gráfica diseñada para facilit
 ## Cómo instalar
 
 1. Clona este repositorio o descarga el código fuente.
+`git clone https://github.com/CarlosErz/FolderOrganizer-.git`
 
 2. Asegúrate de tener Python instalado en tu sistema.
+`https://www.python.org/downloads/`
 
-3. Instala los requerimientos
+4. Instala los requerimientos
+`
 pip install -r requirements.txt
+`
 
