@@ -11,7 +11,6 @@ Folder Organizer es una aplicación con interfaz gráfica diseñada para facilit
 
 - **Clasificación por extensiones:** Folder Organizer analiza el contenido de las carpetas y organiza los archivos automáticamente según su extensión, agrupándolos en carpetas dedicadas para cada tipo de archivo (por ejemplo, imágenes, documentos, videos, etc.).
 
-- **Personalización:** Los usuarios pueden configurar las extensiones de archivo y las carpetas de destino según sus necesidades, lo que permite una organización totalmente personalizada.
 
 - **Opciones de filtrado:** La aplicación ofrece opciones de filtrado para excluir ciertas extensiones o tipos de archivos de la organización, si así lo prefieres.
 
