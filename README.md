@@ -36,9 +36,10 @@ Folder Organizer es una aplicación con interfaz gráfica diseñada para facilit
 `
 pip install -r requirements.txt
 `
-5.Correr el juego con:
+
+5. Correr el juego con:
 `python carpetas.py`
 
-##Instalar por exe 
+## Instalar por exe 
 Solmente instalar el  carpetas.exe
 
