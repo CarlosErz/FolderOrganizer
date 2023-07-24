@@ -241,38 +241,35 @@ history = []
 folder_names = list(FOLDERS.values())
 
 
-def mostrar_carpetas_y_extensiones():
-    ventana_extensiones = customtkinter.CTkToplevel(app)
-    ventana_extensiones.title("Carpetas y Extensiones")
-    
-    # Crear un diccionario para agrupar las extensiones por carpeta
-    carpetas_con_extensiones = {}
+def show_folders_and_extensions():
+    #crear una nueva ventama para mostrar las carpetas y extensiones
+    extensions_window = customtkinter.CTkToplevel(app)
+    extensions_window.title("Folders and Extensions")
 
-    for extension, carpeta in FOLDERS.items():
-        if carpeta in carpetas_con_extensiones:
-            carpetas_con_extensiones[carpeta].append(extension)
+    # crear un diccionario con las carpetas y sus extensiones
+    folders_with_extensions = {}
+
+    for extension, folder in FOLDERS.items():
+        if folder in folders_with_extensions:
+            folders_with_extensions[folder].append(extension)
         else:
-            carpetas_con_extensiones[carpeta] = [extension]
+            folders_with_extensions[folder] = [extension]
 
     # Mostrar las carpetas y sus extensiones en el Listbox
-    lista_extensiones = tk.Listbox(ventana_extensiones, selectmode=tk.SINGLE,
-                                   selectbackground='#5F43D3',
-                                   selectforeground='#FFFFFF',
-                                   font=("Arial", 11, "bold"),
-                                      bg='#262626',
-                                        fg='#FFFFFF',
-                                        bd=0,
-                                        width=50,
-                                        height=20
-                                        
+    extensions_listbox = tk.Listbox(extensions_window,
+                                    selectmode=tk.SINGLE,
+                                    selectbackground='#5F43D3',
+                                    selectforeground='#FFFFFF',
+                                    font=("Arial", 11, "bold"),
+                                    bg='#262626',
+                                    fg='#FFFFFF',
+                                    bd=0,
+                                    width=50,
+                                    height=20)
+    extensions_listbox.pack()
 
-                                      )
-    lista_extensiones.pack()
-
-    for carpeta, extensiones in carpetas_con_extensiones.items():
-        lista_extensiones.insert(tk.END, f"{carpeta}: {', '.join(extensiones)}")
-
-    
+    for folder, extensions in folders_with_extensions.items():
+        extensions_listbox.insert(tk.END, f"{folder}: {', '.join(extensions)}")
 
 
 def filter_folders(folders):
@@ -471,8 +468,8 @@ def perform_classification(folder_address):
         app.after(3000, hide_loading_label)
 
 
-def mostrar_carpetas():
-    mostrar_carpetas_y_extensiones()
+def show_folders():
+    show_folders_and_extensions()
 
 
 def edit_folders():
@@ -482,14 +479,16 @@ def edit_folders():
         new_name = entry_name.get()
 
         if selected_folder not in FOLDERS:
-            show_message("Error", f"La carpeta '{selected_folder}' no existe en el diccionario.", message_type="error")
+            show_message(
+                "Error",
+                f"La carpeta '{selected_folder}' no existe en el diccionario.",
+                message_type="error")
             return
 
         FOLDERS[new_name] = FOLDERS.pop(selected_folder)
         combo_folder.set(new_name)
 
         edit_window.destroy()
-
 
     filtered_folders = filter_folders(FOLDERS)
     edit_window = customtkinter.CTkToplevel(app)
@@ -549,7 +548,7 @@ option_folder_img = customtkinter.CTkImage(
     dark_image=Image.open(os.path.join(img, "option_folder.png")),
     size=(30, 30),
 )
-extensiones = customtkinter.CTkImage(
+extensions = customtkinter.CTkImage(
     dark_image=Image.open(os.path.join(img, "extensiones.png")),
     size=(25, 25),
 )
@@ -612,30 +611,26 @@ undo_button = tk.Button(app,
                         command=undo_last_action)
 
 #option_folder = customtkinter.CTkButton(
-   # app,
-    #text="Editar carpetas",
-    #Efont=('Arial', 10, 'bold'),
-    #text_color='#FFFFFF',
-   # bg_color='#2C2C2C',
-    #corner_radius=10,
-    #padx=30,
-    #pady=10,
-    #bd=1,
-    #image=option_folder_img,
-    #command=edit_folders)
+# app,
+#text="Editar carpetas",
+#Efont=('Arial', 10, 'bold'),
+#text_color='#FFFFFF',
+# bg_color='#2C2C2C',
+#corner_radius=10,
+#padx=30,
+#pady=10,
+#bd=1,
+#image=option_folder_img,
+#command=edit_folders)
 
-showfolder = customtkinter.CTkButton(
-    app,
-    text="Carpetas y extensiones",
-    font=('Arial', 10, 'bold'),
-    text_color='#FFFFFF',
-    bg_color='#2C2C2C',
-    corner_radius=10,
-    #padx=30,
-    #pady=10,
-    #bd=1,
-    image=extensiones,
-    command=mostrar_carpetas)
+showfolder = customtkinter.CTkButton(app,
+                                     text="Carpetas y extensiones",
+                                     font=('Arial', 10, 'bold'),
+                                     text_color='#FFFFFF',
+                                     bg_color='#2C2C2C',
+                                     corner_radius=10,
+                                     image=extensions,
+                                     command=show_folders)
 
 # Configurar el evento para cambiar el color de fondo al hacer hover
 open_button.bind('<Enter>', on_enter)
@@ -647,9 +642,9 @@ open_button.config(cursor='hand2')
 undo_button.config(cursor='hand2')
 # Colocar el botón en la ventana
 #option_folder.place(
- #   relx=0.2,
-  #  rely=0.8,
-   # anchor='center',
+#   relx=0.2,
+#  rely=0.8,
+# anchor='center',
 #)
 showfolder.place(
     relx=0.2,
