@@ -38,7 +38,7 @@ pip install -r requirements.txt
 `
 
 5. Correr la app con:
-`python carpetas.py`
+`python main.py`
 
 ## Instalar por exe 
 Solmente instalar el  carpetas.exe
