@@ -41,5 +41,5 @@ pip install -r requirements.txt
 `python main.py`
 
 ## Instalar por exe 
-Solmente instalar el  carpetas.exe
+Solmente instalar la  carpetas.exe
 
